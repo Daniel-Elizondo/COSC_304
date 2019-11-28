@@ -14,9 +14,9 @@
 String sql = "SELECT orderId, O.CustomerId, totalAmount, firstName+' '+lastName, orderDate FROM OrderSummary O, Customer C WHERE "
 		+ "O.customerId = C.customerId";
 
-String url = "jdbc:sqlserver://sql04.ok.ubc.ca:1433;DatabaseName=db_rlawrenc;";
-String uid = "rlawrenc";
-String pw = "test";
+String url = "jdbc:sqlserver://sql04.ok.ubc.ca:1433;DatabaseName=db_wbarlow;";
+String uid = "wbarlow";
+String pw = "wbarlow";
 NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 try

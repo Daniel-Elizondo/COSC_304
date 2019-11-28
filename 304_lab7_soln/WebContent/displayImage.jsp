@@ -1,4 +1,6 @@
-<%@ page trimDirectiveWhitespaces="true" import="java.sql.*,java.io.*" %><%@ include file="jdbc.jsp" %><%
+<%@ page trimDirectiveWhitespaces="true" import="java.sql.*,java.io.*"%><%@ include
+	file="jdbc.jsp"%>
+<%
 
 // Indicate that we are sending a JPG picture
 response.setContentType("image/jpeg");  
@@ -19,7 +21,7 @@ catch(Exception e)
 }
 
 // TODO: Modify SQL to retrieve productImage given productId
-String sql = "";
+String sql = "select productImageURL from product where productId =?";
 
 try 
 {
@@ -30,6 +32,12 @@ try
 
 	int BUFFER_SIZE = 10000;
 	byte[] data = new byte[BUFFER_SIZE];
+	ResultSet rst2 = stmt.executeQuery(sql); out.println(""); 
+	while (rst.next()) { 
+		int id2 = rst.getInt(1);
+	}
+	String imageurl = "displayImage.jsp?id="+id;
+	session.setAttribute("imgurl", imageurl);
 
 	if (rst.next())
 	{

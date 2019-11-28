@@ -37,9 +37,9 @@
 		name = '%' + name + '%';
 	}
 	
-	String url = "jdbc:sqlserver://sql04.ok.ubc.ca:1433;DatabaseName=db_rlawrenc;";
-	String uid = "rlawrenc";
-	String pw = "test";
+	String url = "jdbc:sqlserver://sql04.ok.ubc.ca:1433;DatabaseName=db_wbarlow;";
+	String uid = "wbarlow";
+	String pw = "81776940";
 	NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 	try
@@ -58,15 +58,23 @@
 			pstmt.setString(1, name);
 
 		ResultSet rst = pstmt.executeQuery();
-		out.println("<table><tr><th></th><th>Product Name</th><th>Price</th></tr>");
+		out.println("<font size =\"3"+"\"face =\"Helvetica"+"\">");
+		out.print("<table class =\"table"+"\"border=\"2"+"\"><tbody><tr>"+
+		"<th class=\"col-md-1"+"\"></th>"+
+		"<th>Product Name</th>" +
+		"<th>Price</th></tr>");
+		
 		while (rst.next()) 
 		{
-			out.print("<tr><td><a href=\"addcart.jsp?id=" + rst.getInt(1) + "&name=" + rst.getString(2)
-					+ "&price=" + rst.getDouble(3) + "\">Add to Cart</a></td>");
-			out.println("<td>" + rst.getString(2) + "</td>" + "<td>" + currFormat.format(rst.getDouble(3))
-					+ "</td></tr>");
+			out.print("<tr><td class =\"col-md-1"+"\"><a href =\"addcart.jsp?id=" + rst.getInt(1) + "&name=" + rst.getString(2)
+			+ "&price=" + rst.getDouble(3) + "\">Add to Cart</a></td>" +
+			"<td><a href=\"product.jsp?id=" + rst.getInt(1) + "&pName=" + rst.getString(2)
+			+ "&pPrice=" + rst.getDouble(3) + "\">"+rst.getString(2)+"</a></td>"+
+			"<td>"+currFormat.format(rst.getDouble(3))+"</td></tr>");
+		
+	
 		}
-		out.println("</table>");
+		out.println("</tbody></table></font>");
 	} 
 	catch (SQLException ex) 
 	{

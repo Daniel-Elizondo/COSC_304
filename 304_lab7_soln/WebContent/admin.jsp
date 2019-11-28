@@ -19,9 +19,9 @@
 // TODO: Write SQL query that prints out total order amount by day
 
 String sql = "SELECT CONVERT(VARCHAR(10), orderDate, 111) AS  DateOfOrder, SUM(totalAmount) AS Total FROM ordersummary GROUP BY CONVERT(VARCHAR(10), orderDate, 111) ORDER BY DateOfOrder;";
-String url = "jdbc:sqlserver://sql04.ok.ubc.ca:1433;DatabaseName=db_delizond;";
-String uid = "delizond";
-String pw = "16719189";
+String url = "jdbc:sqlserver://sql04.ok.ubc.ca:1433;DatabaseName=db_wbarlow;";
+String uid = "wbarlow";
+String pw = "81776940";
 NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 try
@@ -62,4 +62,6 @@ if (false){ //validate if user is an admin
 
 </body>
 </html>
+
+
 
