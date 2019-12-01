@@ -90,6 +90,7 @@
 				out.println("<p>" + rs2.getString(1) + "</p>");
 				count++;
 				totalReviews += rs2.getInt(2);
+				//
 			}
 			if (count == 0){
 				out.println("<p>No custoemr reviews</p>");
