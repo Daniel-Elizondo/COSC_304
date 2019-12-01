@@ -18,6 +18,10 @@
 
 <h2 align="center"><font size = '3' face = 'helvetica'><a href="logout.jsp">Log out</a></font></h2>
 
+<h2 align="center"><font size = '3' face = 'helvetica'><a href="createAccount.jsp">New Customer</a></font></h2>
+
+<h2 align="center"><font size = '3' face = 'helvetica'><a href="updateCustomer.jsp">Update Customer Information</a></font></h2>
+
 <%
 	String userName = (String) session.getAttribute("authenticatedUser");
 	if (userName != null)

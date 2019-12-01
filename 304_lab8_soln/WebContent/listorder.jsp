@@ -3,7 +3,7 @@
 
 <html>
 <head>
-<title>Ray's Grocery Order List</title>
+<title>Strickland Propane Order List</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
